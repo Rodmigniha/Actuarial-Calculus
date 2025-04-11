@@ -48,7 +48,7 @@ elif page == "Calcul des commutations":
     st.markdown("Vous n'avez pas de table de mortalité ?")
     st.markdown("➡️ Téléchargez un modèle prêt à remplir ci-dessous 👇")
     
-    url = "https://github.com/Rodmigniha/Actuarial-Calculus/blob/main/data/template_tabl_mortalite.xlsx"
+    url = "https://raw.githubusercontent.com/Rodmigniha/Actuarial-Calculus/main/data/template_tabl_mortalite.xlsx"
     response = requests.get(url)
 
     if response.status_code == 200:
