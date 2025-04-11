@@ -75,7 +75,7 @@ elif page == "Calcul des commutations":
         if not np.issubdtype(data[l].dtype, np.number):
             st.error("La colonne sélectionnée pour lx doit contenir uniquement des nombres.")
         i = float(st.sidebar.text_input('Entrez le taux intérêt technique', 0.035))
-        calc = st.sidebar.selectbox('Ajouter un calcul actuariel', 
+        calc = st.sidebar.radio('Ajouter un calcul actuariel', 
                                     ['non', "Term immediate annuity", 
                                      "Differed annuity", 
                                      "Term insurance - yearly", 
