@@ -66,16 +66,22 @@ streamlit run main.py
 ```
 ## 📁 Structure du projet
 ```bash
+
 Actuarial-Calculus/
+│   README.md
 │
-├── main.py               # Application principale Streamlit
-├── utils.py              # Fonctions de calcul des commutations
-├── requirements.txt      # Dépendances Python
-├── data/
-│   └── Capture.png    # Capture d’écran de l’application en marche
-│   └── Capture.png    # Capture d’écran de l’application en marche
-│   └── template_tabl_mortalite.xlsx # modèle de table de mortalité
-└── README.md             
+├───data
+│       Capture01.PNG # Capture d’écran de l’application en marche
+│       Capture02.PNG
+│       Capture03.PNG
+│
+└───src
+    │   main.py # Application principale Streamlit
+    │   requirements.txt # Dépendances Python
+    │   template_tabl_mortalite.xlsx # modèle de table de mortalité
+    │   utils.py # Fonctions de calcul des commutations
+    │   __init__.py
+    └───
 ```
 ## Contribution
 
