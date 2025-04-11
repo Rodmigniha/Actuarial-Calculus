@@ -30,9 +30,9 @@ L’interface est divisée en deux onglets :
 
 ## 📸 Aperçu de l’application
 
-![screenshot](../data/Capture01.PNG)
-![screenshot](../data/Capture02.PNG) 
-![screenshot](../data/Capture03.PNG)
+![screenshot](https://github.com/Rodmigniha/Actuarial-Calculus/blob/main/data/Capture01.PNG)
+![screenshot](https://github.com/Rodmigniha/Actuarial-Calculus/blob/main/data/Capture02.PNG) 
+![screenshot](https://github.com/Rodmigniha/Actuarial-Calculus/blob/main/data/Capture03.PNG)
 
 ---
 
