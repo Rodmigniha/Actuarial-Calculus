@@ -37,7 +37,7 @@ if page == "Accueil":
     st.markdown("""
     ### 🎯 Objectif
 
-    L’objectif est de **faciliter l’analyse actuarielle** de tables de mortalité et 
+    L’objectif est de **faciliter l’analyse actuarielle** à partir des tables de mortalité et 
     de **rendre accessible** le calcul des commutations pour les professionnels de l’assurance vie.
     """)
 
