@@ -3,6 +3,7 @@ from utils import commut
 import io
 import pandas as pd
 import numpy as np
+import requests
 
 page = st.sidebar.selectbox('Navigation', ["Accueil", "Calcul des commutations"])
 
@@ -47,15 +48,18 @@ elif page == "Calcul des commutations":
     st.markdown("Vous n'avez pas de table de mortalité ?")
     st.markdown("➡️ Téléchargez un modèle prêt à remplir ci-dessous 👇")
     
-    with open('https://github.com/Rodmigniha/Actuarial-Calculus/blob/main/data/template_tabl_mortalite.xlsx', "rb") as f:
-        bytes_data = f.read()
+    url = "https://github.com/Rodmigniha/Actuarial-Calculus/blob/main/data/template_tabl_mortalite.xlsx"
+    response = requests.get(url)
 
+    if response.status_code == 200:
         st.download_button(
-            label="📥 Télécharger le template Excel",
-            data=bytes_data,
+            label="📥 Télécharger le modèle de table de mortalité",
+            data=response.content,
             file_name="template_table_mortalite.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
+    else:
+        st.error("❌ Le fichier modèle n'a pas pu être récupéré.")
 
     tabl_mort = st.file_uploader('Veuillez téléverser le fichier Excel de table de mortalité', type='xlsx')
 
