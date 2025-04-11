@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import requests
 
-page = st.sidebar.selectbox('Navigation', ["Accueil", "Calcul des commutations"])
+page = st.sidebar.radio('Navigation', ("Accueil", "Calcul des commutations"))
 
 if page == "Accueil":
     st.title("🧮 Application de calcul actuariel : commutations sur tables de mortalité")
