@@ -36,10 +36,8 @@ if page == "Accueil":
     st.markdown("""
     ### 🎯 Objectif
 
-    L’objectif est de **faciliter l’analyse actuarielle** de tables de mortalité et de **rendre accessible** le calcul des commutations pour :
-    - les étudiants en actuariat,
-    - les enseignants et formateurs,
-    - les professionnels de l’assurance vie.
+    L’objectif est de **faciliter l’analyse actuarielle** de tables de mortalité et 
+    de **rendre accessible** le calcul des commutations pour les professionnels de l’assurance vie.
     """)
 
 
@@ -49,7 +47,7 @@ elif page == "Calcul des commutations":
     st.markdown("Vous n'avez pas de table de mortalité ?")
     st.markdown("➡️ Téléchargez un modèle prêt à remplir ci-dessous 👇")
     
-    with open('../data/template_tabl_mortalite.xlsx', "rb") as f:
+    with open('template_tabl_mortalite.xlsx', "rb") as f:
         bytes_data = f.read()
 
         st.download_button(
@@ -73,7 +71,7 @@ elif page == "Calcul des commutations":
         if not np.issubdtype(data[l].dtype, np.number):
             st.error("La colonne sélectionnée pour lx doit contenir uniquement des nombres.")
         i = float(st.sidebar.text_input('Entrez le taux intérêt technique', 0.035))
-        calc = st.sidebar.selectbox('Ajouter un calculs actuariels', 
+        calc = st.sidebar.selectbox('Ajouter un calcul actuariel', 
                                     ['non', "Term immediate annuity", 
                                      "Differed annuity", 
                                      "Term insurance - yearly", 
