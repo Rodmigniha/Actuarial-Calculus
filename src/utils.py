@@ -48,8 +48,10 @@ def commut(data, Age, L, i=0.035, n=1, type='non'):
     if type == "Term immediate annuity":
         ax_n = np.zeros(w)
         for x in range(w-1):
-            if data['D'][x] != 0:
-                ax_n[x] = (data['N'][x]-data['N'][x+n])/data['D'][x]
+            if data['D'][x] != 0 :
+                if x+n <=106 :
+                    ax_n[x] = (data['N'][x]-data['N'][x+n])/data['D'][x]
+                
         
         data['ax:n (rente temporaire) =(N_(x)-N_(x+n))/Dx'] = ax_n
         
@@ -57,7 +59,8 @@ def commut(data, Age, L, i=0.035, n=1, type='non'):
         n_âx = np.zeros(w)
         for x in range(w-1):
             if data['D'][x] != 0:
-               n_âx[x]= data['N'][x+n]/data['D'][x]
+                if x+n <=106 :
+                    n_âx[x]= data['N'][x+n]/data['D'][x]
                
         data['n|äx = N_(x+n)/Dx'] = n_âx
     
@@ -65,7 +68,9 @@ def commut(data, Age, L, i=0.035, n=1, type='non'):
         Ax_n = np.zeros(w)
         for x in range(w-1):
             if data['D'][x] != 0:
-                Ax_n[x] = (data['M'][x]-data['M'][x+n])/data['D'][x]
+                if x+n <=106 :
+                    Ax_n[x] = (data['M'][x]-data['M'][x+n])/data['D'][x]
+                    
                 
         data['A_x:n (temporaire décès) =(M_(x)-M_(x+n))/Dx'] = Ax_n
         
@@ -73,7 +78,8 @@ def commut(data, Age, L, i=0.035, n=1, type='non'):
         nEx = np.zeros(w)
         for x in range(w-1):
             if data['D'][x] != 0:
-               nEx[x] = data['D'][x+n]/data['D'][x]
+                if x+n <=106 :
+                    nEx[x] = data['D'][x+n]/data['D'][x]
                
         data['nEx (Pure endowment) = D_(x+n)/Dx'] = nEx
     
@@ -81,8 +87,10 @@ def commut(data, Age, L, i=0.035, n=1, type='non'):
         Ax_n_mixte = np.zeros(w)
         for x in range(w-1):
             if data['D'][x] != 0:
-                Ax_n_mixte[x] = (data['M'][x]-data['M'][x+n]+data['D'][x+n])/data['D'][x]
+                if x+n <=106 :
+                    Ax_n_mixte[x] = (data['M'][x]-data['M'][x+n]+data['D'][x+n])/data['D'][x]
                 
+                    
         data['A(x:n)_mixte =(M_(x)-M_(x+n)+D_(x+n))/Dx'] = Ax_n_mixte
 
     return data
